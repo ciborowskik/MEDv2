@@ -1,0 +1,18 @@
+{
+    "Dataset name": "3500_10_5",
+    "Observations count": 3500,
+    "Features count": 10,
+    "Cluster count": 5,
+    "SciPy clustering, single, euclidean": 0.14,
+    "Own Python clustering, single, euclidean": 22.97,
+    "Own Cython clustering, single, euclidean": 22.86,
+    "SciPy clustering, complete, euclidean": 0.32,
+    "Own Python clustering, complete, euclidean": 22.77,
+    "Own Cython clustering, complete, euclidean": 22.44,
+    "SciPy clustering, average, euclidean": 0.31,
+    "Own Python clustering, average, euclidean": 48.0,
+    "Own Cython clustering, average, euclidean": 22.91,
+    "SciPy clustering, ward, euclidean": 0.3,
+    "Own Python clustering, ward, euclidean": 73.48,
+    "Own Cython clustering, ward, euclidean": 22.7
+}

@@ -1,0 +1,14 @@
+{
+    "Dataset name": "1000_300_5",
+    "Observations count": 1000,
+    "Features count": 300,
+    "Cluster count": 5,
+    "SciPy clustering, single, euclidean": 0.08,
+    "Own Python clustering, single, euclidean": 1.08,
+    "SciPy clustering, single, seuclidean": 0.16,
+    "Own Python clustering, single, seuclidean": 1.12,
+    "SciPy clustering, single, chebyshev": 0.06,
+    "Own Python clustering, single, chebyshev": 1.16,
+    "SciPy clustering, single, cityblock": 0.08,
+    "Own Python clustering, single, cityblock": 1.16
+}
