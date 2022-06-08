@@ -1,4 +1,3 @@
-import numpy as np
 from matplotlib import pyplot as plt
 from pandas import DataFrame
 from sklearn.datasets import make_blobs
@@ -28,26 +27,28 @@ def plot(data, clusters, title):
     plt.show()
 
 
-if __name__ == '__main__':
-    features, original_cluster_ids = make_blobs(
-        n_samples=200,
-        n_features=3,
-        centers=5,
-        cluster_std=0.5,
-        shuffle=True)
+def run(data, clusters_count, method, metric, original_clusters):
+    my_cluster_ids = my_python_clustering(data, clusters_count, method, metric)
+    scipy_cluster_ids = scipy_clustering(data, clusters_count, method, metric)
 
-    #features = np.array([[0, 0], [0, 1], [1, 0],
-    #              [0, 4], [0, 3], [1, 4],
-    #              [4, 0], [3, 0], [4, 1],
-    #              [4, 4], [3, 4], [4, 3]])
-
-    my_cluster_ids = my_python_clustering(features, 5, 'single', 'euclidean')
-    scipy_cluster_ids = scipy_clustering(features, 5, 'single', 'euclidean')
-    # print(cluster_ids)
-
-    plot(features, original_cluster_ids, 'Original clusters')
-    plot(features, scipy_cluster_ids, 'Scipy clusters')
-    plot(features, my_cluster_ids, 'My clusters')
+    plot(data, original_clusters, 'Original clusters')
+    plot(data, scipy_cluster_ids, 'Scipy clusters')
+    plot(data, my_cluster_ids, 'My clusters')
 
     print(f'Scipy Fowlkes–Mallows index: {fowlkes_mallows_score(scipy_cluster_ids, my_cluster_ids)}')
     print(f'My Fowlkes–Mallows index: {fowlkes_mallows_score(scipy_cluster_ids, my_cluster_ids)}')
+
+
+def generate_and_run(features_count, attributes_count, clusters_count, std, method, metric):
+    features, original_cluster = make_blobs(
+        n_samples=features_count,
+        n_features=attributes_count,
+        centers=clusters_count,
+        cluster_std=std,
+        shuffle=True)
+
+    run(features, clusters_count, method, metric, original_cluster)
+
+
+if __name__ == '__main__':
+    generate_and_run(200, 3, 5, 0.5, 'single', 'euclidean')

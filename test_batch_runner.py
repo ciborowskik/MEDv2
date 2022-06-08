@@ -190,7 +190,7 @@ def create_stats(directory, experiments, main_property, implementations):
 
 
 if __name__ == '__main__':
-    # run_functional_tests(FUNCTIONAL_TESTS_DIRECTORY)
+    run_functional_tests(FUNCTIONAL_TESTS_DIRECTORY)
 
     run_performance_tests(
         FEATURES_PERFORMANCE_TESTS_DIRECTORY,

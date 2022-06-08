@@ -117,13 +117,3 @@ def my_python_clustering(data, clusters_count, method, metric, use_cython=False)
 
 def my_cython_clustering(data, clusters_count, method, metric):
     return my_python_clustering(data, clusters_count, method, metric, True)
-
-
-if __name__ == '__main__':
-    X = np.array([[0, 0], [0, 1], [1, 0],
-                  [0, 4], [0, 3], [1, 4],
-                  [4, 0], [3, 0], [4, 1],
-                  [4, 4], [3, 4], [4, 3]])
-
-    ids = my_python_clustering(X, 4, 'single', 'euclidean')
-    print(ids)
