@@ -1,0 +1,7 @@
+pandas
+scipy
+numpy
+matplotlib
+sklearn
+PyPDF2
+xlsxwriter
